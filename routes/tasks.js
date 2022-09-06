@@ -1,20 +1,19 @@
+// ルーティング専用のファイル
+
 const express = require("express");
 const router = express.Router();
+const {
+  getAllTasks,
+  createTask,
+  getSingleTask,
+  updateTask,
+  deleteTask,
+} = require("/../controllers/tasks");
 
-router.get("/api/tasks", (req, res) => {
-  res.send("タスクを全て取得しました");
-});
-router.post("/api/tasks", (req, res) => {
-  res.send("タスクを新規作成しました");
-});
-router.get("/api/tasks/:id", (req, res) => {
-  res.send("ある特定のタスクを取得しました");
-});
-router.patch("/api/tasks/:id", (req, res) => {
-  res.send("ある特定のタスクを更新しました");
-});
-router.delete("/api/tasks/:id", (req, res) => {
-  res.send("ある特定のタスクを削除しました");
-});
+router.get("/api/tasks", getAllTasks);
+router.post("/api/tasks", createTask);
+router.get("/api/tasks/:id", getSingleTask);
+router.patch("/api/tasks/:id", updateTask);
+router.delete("/api/tasks/:id", deleteTask);
 
 module.exports = router;
