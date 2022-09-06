@@ -8,12 +8,12 @@ const {
   getSingleTask,
   updateTask,
   deleteTask,
-} = require("/../controllers/tasks");
+} = require("../controllers/tasks");
 
-router.get("/api/tasks", getAllTasks);
-router.post("/api/tasks", createTask);
-router.get("/api/tasks/:id", getSingleTask);
-router.patch("/api/tasks/:id", updateTask);
-router.delete("/api/tasks/:id", deleteTask);
+router.get("/", getAllTasks);
+router.post("/", createTask);
+router.get("/:id", getSingleTask);
+router.patch("/:id", updateTask);
+router.delete("/:id", deleteTask);
 
 module.exports = router;
