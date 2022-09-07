@@ -5,6 +5,7 @@ const PORT = 4000;
 const connectDB = require("./db/connect");
 require("dotenv").config();
 app.use(express.json());
+app.use(express.static("./public"));
 
 // ルーティング設計
 app.use("/api/tasks", taskRoute);
